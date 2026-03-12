@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    /* Базові налаштування */
+    "target": "ES2022", // Сучасний синтаксис JS
+    "module": "NodeNext", // Ключове налаштування для ESM
+    "moduleResolution": "NodeNext", // Дозволяє Node.js правильно шукати модулі
+    "outDir": "./dist", // Куди збиратиметься проект
+    "rootDir": "./src", // Де лежать вихідні файли
+
+    /* Суворі перевірки (рекомендовано) */
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Сумісність */
+    "esModuleInterop": true, // Потрібно для імпорту CommonJS пакетів (як Express)
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true // Для зручного дебагу
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
