@@ -29,6 +29,13 @@ export async function getZoneById(id: string) {
   return toCamelCase<Zone>(rows[0]);
 }
 
+export async function getZoneByName(name: string) {
+  const { rows } = await pool.query("SELECT * FROM zones WHERE name = $1;", [
+    name,
+  ]);
+  return toCamelCase<Zone>(rows[0]);
+}
+
 export async function updateZone(id: string, dto: UpdateZoneDTO) {
   const { query, values } = buildUpdateQuery("zones", dto, id);
   const { rows } = await pool.query(query, values);
