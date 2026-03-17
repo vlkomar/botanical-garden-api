@@ -1,16 +1,17 @@
 import * as zoneModel from "../models/zone.model.js";
 import { CreateZoneDTO, UpdateZoneDTO } from "../types/zone.types.js";
+import { AppError } from "../utils/AppError.js";
 
 async function ensureZoneExists(id: string) {
   const zone = await zoneModel.getZoneById(id);
-  if (!zone) throw new Error(`Zone with id "${id}" not found`);
+  if (!zone) throw new AppError(`Zone with id '${id}' not found`, 404);
   return zone;
 }
 
 export async function createZone(dto: CreateZoneDTO) {
   const existingZone = await zoneModel.getZoneByName(dto.name);
   if (existingZone)
-    throw new Error(`Zone with name "${dto.name}" already exists`);
+    throw new AppError(`Zone with name '${dto.name}' already exists`, 409);
 
   const newZone = await zoneModel.createZone(dto);
   return newZone;
