@@ -16,8 +16,8 @@ export const createZoneSchema = zoneSchema.omit({
   createdAt: true,
 });
 
-export type createZoneDTO = z.infer<typeof createZoneSchema>;
+export type CreateZoneDTO = z.infer<typeof createZoneSchema>;
 
 export const updateZoneSchema = createZoneSchema.partial();
 
-export type updateZoneDTO = z.infer<typeof updateZoneSchema>;
+export type UpdateZoneDTO = z.infer<typeof updateZoneSchema>;
