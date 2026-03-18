@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateZoneDTO, UpdateZoneDTO } from "../types/zone.types.js";
+import { CreateZoneDTO, UpdateZoneDTO } from "../schemas/zone.schema.js";
 import * as zoneService from "../services/zone.service.js";
 
 export async function createZone(req: Request, res: Response) {
