@@ -21,4 +21,4 @@ export type CreatePlantDTO = z.infer<typeof createPlantSchema>;
 
 export const updatePlantSchema = createPlantSchema.partial();
 
-export type UpdateSchemaDTO = z.infer<typeof updatePlantSchema>;
+export type UpdatePlantDTO = z.infer<typeof updatePlantSchema>;
