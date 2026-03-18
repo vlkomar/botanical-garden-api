@@ -1,5 +1,5 @@
 import pool from "../db.js";
-import { CreateZoneDTO, UpdateZoneDTO, Zone } from "../types/zone.types.js";
+import { CreateZoneDTO, UpdateZoneDTO, Zone } from "../schemas/zone.schema.js";
 import { toCamelCase } from "../utils/case.helpers.js";
 import { buildUpdateQuery } from "../utils/db.helpers.js";
 

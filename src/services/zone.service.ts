@@ -1,5 +1,5 @@
 import * as zoneModel from "../models/zone.model.js";
-import { CreateZoneDTO, UpdateZoneDTO } from "../types/zone.types.js";
+import { CreateZoneDTO, UpdateZoneDTO } from "../schemas/zone.schema.js";
 import { AppError } from "../utils/AppError.js";
 
 async function ensureZoneExists(id: string) {
