@@ -1,11 +1,11 @@
 import z from "zod";
 
 const plantSchema = z.object({
-  id: z.uuid(),
-  acquisitionDate: z.iso.date(),
+  id: z.guid(),
+  acquisitionDate: z.iso.date().pipe(z.coerce.date()),
   commonName: z.string().optional(),
   scientificName: z.string(),
-  zoneId: z.uuid(),
+  zoneId: z.guid(),
   status: z.enum(["healthy", "sick", "quarantine"]).default("healthy"),
   createdAt: z.iso.datetime().pipe(z.coerce.date()),
 });
