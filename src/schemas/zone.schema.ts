@@ -1,7 +1,7 @@
 import z from "zod";
 
 const zoneSchema = z.object({
-  id: z.uuid(),
+  id: z.guid(),
   name: z.string().min(2),
   climateType: z.string(),
   targetTempC: z.number().optional(),
