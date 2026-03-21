@@ -2,7 +2,7 @@ import * as zoneModel from "../models/zone.model.js";
 import { CreateZoneDTO, UpdateZoneDTO } from "../schemas/zone.schema.js";
 import { AppError } from "../utils/AppError.js";
 
-async function ensureZoneExists(id: string) {
+export async function ensureZoneExists(id: string) {
   const zone = await zoneModel.getZoneById(id);
   if (!zone) throw new AppError(`Zone with id '${id}' not found`, 404);
   return zone;

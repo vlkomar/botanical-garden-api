@@ -2,6 +2,7 @@ import express from "express";
 import helmet from "helmet";
 import dotenv from "dotenv";
 import zoneRoutes from "./routes/zone.routes.js";
+import plantRoutes from "./routes/plant.routes.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/api/zones", zoneRoutes);
+app.use("/api/plants", plantRoutes);
 
 app.use(errorHandler);
 
